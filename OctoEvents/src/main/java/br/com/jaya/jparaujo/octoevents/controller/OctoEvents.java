@@ -33,13 +33,13 @@ public class OctoEvents {
         return new ResponseEntity(issueReturn, HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "/",headers = { "X-GitHub-Issue=ping"} )
+    @RequestMapping(method = RequestMethod.POST, path = "/",headers = { "X-GitHub-Event=ping"} )
     public ResponseEntity eventPing(@RequestBody Map<String, Object> payload){
         LOGGER.info("Conectado com sucesso");
         return new ResponseEntity(payload, HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "/",headers = { "X-GitHub-Issue=issues"} )
+    @RequestMapping(method = RequestMethod.POST, path = "/",headers = { "X-GitHub-Event=issues"} )
     public ResponseEntity eventIssueSave(@RequestBody Map<String, Object> issues){
         LOGGER.info("Conectado com sucesso");
         return new ResponseEntity(issues, HttpStatus.OK);
