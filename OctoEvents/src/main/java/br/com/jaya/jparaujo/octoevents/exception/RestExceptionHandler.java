@@ -20,7 +20,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     @Override
     protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
         loggerREH.error("handleHttpMessageNotReadable");
-        return new ResponseEntity<>("400", HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST);
     }
 
     @Override
@@ -33,14 +33,14 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         BindingResult bindingResult = ex.getBindingResult();
 
         if (bindingResult.hasErrors()) {
-            return new ResponseEntity<>("422", HttpStatus.UNPROCESSABLE_ENTITY);
+            return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY.value(), HttpStatus.UNPROCESSABLE_ENTITY);
         }
-        return new ResponseEntity<>("400", HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>( HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(value = {EventDoesNotExistException.class})
-    protected ResponseEntity<String> handleDoesNotExist() {
-        loggerREH.error("EventDoesNotExistException");
-        return new ResponseEntity<>("404", HttpStatus.NOT_FOUND);
+    @ExceptionHandler(value = {IssueDoesNotExistException.class})
+    protected ResponseEntity<HttpStatus> handleDoesNotExist() {
+        loggerREH.error("IssueDoesNotExistException");
+        return new ResponseEntity(HttpStatus.NOT_FOUND);
     }
 }
