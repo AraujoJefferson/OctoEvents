@@ -48,8 +48,13 @@ Endpoints necessário para consumir os serviços da aplicação:
 	> **POST** http://localhost:8080/
 
     Segue abaixo, exemplo com os campos para realizar a chamada **JSON** via **POST**:
-
-	```
+    
+- **Header**
+```	
+	Content-Type:application/json
+	X-GitHub-Event: issues    
+```
+```
     {
        "action":"opened",
        "issue":{
@@ -58,6 +63,10 @@ Endpoints necessário para consumir os serviços da aplicação:
        }
     }
 
-    ```
+```
 - Filtrar Issues
 	> **GET** http://localhost:8080/issues/***{issue}***/events
+	- **Header**
+```	
+	Content-Type:application/json
+```
