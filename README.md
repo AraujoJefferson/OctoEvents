@@ -37,8 +37,8 @@ Após executar a aplicação de acordo com o passo acima, abrir um novo terminal
 ```sudo ngrok http 8080 ```
 
 No terminal irá disponibilizar a URL a ser definida no repositório em Settings > Webhooks > add webhook:
-  > Em "Payload URL" colar a URL;
-  > Em "Content type" configurar "application/json".
+- Em "Payload URL" colar a URL;
+- Em "Content type" configurar "application/json".
 
 A partir de agora a API captura todas as publicações no repositório.
 
