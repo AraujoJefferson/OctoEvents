@@ -18,11 +18,9 @@ public class IssuesBusiness {
     }
 
     public List<Issues> findIssuesByNumber(Long number) {
-        Issues issuesReturn = repository.findById(number)
+        List<Issues> issuesReturn = repository.findByNumber(number)
                 .orElseThrow(IssueDoesNotExistException::new);
-        List listReturn = new ArrayList();
-        listReturn.add(issuesReturn);
-        return listReturn;
+        return issuesReturn;
     }
 
     public Issues saveIssues(Map<String, Object> requestBody) {
