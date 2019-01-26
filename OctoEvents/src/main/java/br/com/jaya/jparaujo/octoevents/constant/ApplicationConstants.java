@@ -3,9 +3,10 @@ package br.com.jaya.jparaujo.octoevents.constant;
 public class ApplicationConstants {
     //EndPoints
     public static final String CONTENT_TYPE = "application/json";
-    public static final String EVENT_PING_GITHUB = "X-GitHub-Event=ping";
-    public static final String EVENT_ISSUES_GITHUB = "X-GitHub-Event=issues";
-    public static final String EVENT_ISSUES_COMMENTS_GITHUB = "X-GitHub-Event=issue_comment";
+    public static final String EVENT_ISSUES = "X-GitHub-Event";
+    public static final String EVENT_PING_GITHUB = EVENT_ISSUES + "=ping";
+    public static final String EVENT_ISSUES_GITHUB_ISSUES = EVENT_ISSUES + "=issues";
+    public static final String EVENT_ISSUES_COMMENTS_GITHUB = EVENT_ISSUES + "=issue_comment";
     public static final String EVENT_ISSUES_BODY_ISSUE = "issue";
 
     //EndPoints>Messages

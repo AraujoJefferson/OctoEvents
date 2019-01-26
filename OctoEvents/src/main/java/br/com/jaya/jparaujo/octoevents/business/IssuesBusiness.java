@@ -4,7 +4,6 @@ import br.com.jaya.jparaujo.octoevents.entity.Issues;
 import br.com.jaya.jparaujo.octoevents.exception.IssueDoesNotExistException;
 import br.com.jaya.jparaujo.octoevents.repository.IssuesRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 

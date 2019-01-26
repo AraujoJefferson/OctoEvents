@@ -1,6 +1,7 @@
 package br.com.jaya.jparaujo.octoevents.entity;
 
 import javax.persistence.*;
+
 import static br.com.jaya.jparaujo.octoevents.constant.ApplicationConstants.*;
 
 @Entity
